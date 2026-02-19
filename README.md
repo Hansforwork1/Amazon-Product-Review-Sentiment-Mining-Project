@@ -1,67 +1,67 @@
-# Amazon Reviews Sentiment Analysis (亞馬遜評論情感分析) 🛍️📊
+# Amazon Reviews Sentiment Analysis 🛍️📊
 
-這是一個使用 Python 進行亞馬遜產品評論情感分析的專案。
-本專案利用自然語言處理 (NLP) 技術，對客戶評論進行深入分析，旨在識別評論的情感傾向（正面、負面、中立），並探索評論長度、評分分佈與時間趨勢的關係。
+This is a project for sentiment analysis of Amazon product reviews using Python.
+It utilizes Natural Language Processing (NLP) techniques to deeply analyze customer reviews, aiming to identify sentiment tendencies (Positive, Negative, Neutral) and explore the relationships between review length, rating distribution, and time trends.
 
-## 🎯 專案目標
+## 🎯 Project Goals
 
-- **情感識別**: 自動判斷客戶評論的情感極性。
-- **趨勢分析**: 觀察不同時間段的評論變化。
-- **評分關聯**: 分析評論長度與評分之間的關係。
-- **關鍵字提取**: (透過前處理) 識別評論中的重要資訊。
+- **Sentiment Identification**: Automatically determine the sentiment polarity of customer reviews.
+- **Trend Analysis**: Observe changes in reviews over different time periods.
+- **Rating Correlation**: Analyze the relationship between review length and ratings.
+- **Keyword Extraction**: Identify important information in reviews (via preprocessing).
 
-## 🛠️ 技術與套件
+## 🛠️ Technologies & Libraries
 
-本專案使用以下 Python 函式庫：
+This project uses the following Python libraries:
 
-- **[Pandas](https://pandas.pydata.org/)**: 用於資料處理與分析。
-- **[NLTK (Natural Language Toolkit)](https://www.nltk.org/)**: 進行文字前處理（移除停用詞）。
-- **[TextBlob](https://textblob.readthedocs.io/en/dev/)**: 進行情感分析（計算 Polarity 與 Subjectivity）。
-- **[Matplotlib](https://matplotlib.org/)**: 繪製數據圖表（程式碼中包含繪圖邏輯）。
+- **[Pandas](https://pandas.pydata.org/)**: For data manipulation and analysis.
+- **[NLTK (Natural Language Toolkit)](https://www.nltk.org/)**: For text preprocessing (removing stopwords).
+- **[TextBlob](https://textblob.readthedocs.io/en/dev/)**: For sentiment analysis (calculating Polarity and Subjectivity).
+- **[Matplotlib](https://matplotlib.org/)**: For plotting data charts (plotting logic included in the code).
 
-## ⚙️ 安裝指南
+## ⚙️ Installation Guide
 
-請確保您的環境已安裝 Python 3.x，並執行以下指令安裝所需套件：
+Please ensure your environment has Python 3.x installed, and run the following command to install the required packages:
 
 ```bash
 pip install pandas nltk textblob matplotlib
 ```
 
-此外，您需要下載 NLTK 的停用詞資料庫：
+Additionally, you need to download the NLTK stopwords database:
 
 ```python
 import nltk
 nltk.download('stopwords')
 ```
 
-## 🚀 使用方法
+## 🚀 Usage
 
-1. **準備資料**: 請確保目錄下包含 `Amazon_Reviews.csv` 檔案。
-2. **執行程式**:
+1. **Prepare Data**: Ensure the `Amazon_Reviews.csv` file is in the directory.
+2. **Run Script**:
    
    ```bash
    python amazon_reviews.py
    ```
 
-3. **程式流程**:
-   - **讀取資料**: 載入 CSV 檔案並進行基本的錯誤處理。
-   - **資料清理**: 移除重複項、缺失值，並過濾 HTML 標籤、URL 與標點符號。
-   - **情感計算**: 使用 `TextBlob` 計算每條評論的情感分數 (-1 到 1)。
-   - **結果輸出**: 程式執行完畢後，將生成一個新的 CSV 檔案 `Amazon_Reviews_with_Sentiment.csv`。
+3. **Process Flow**:
+   - **Load Data**: Loads the CSV file with basic error handling.
+   - **Data Cleaning**: Removes duplicates, missing values, and filters out HTML tags, URLs, and punctuation.
+   - **Sentiment Calculation**: Uses `TextBlob` to calculate a sentiment score (-1 to 1) for each review.
+   - **Result Output**: After execution, a new CSV file `Amazon_Reviews_with_Sentiment.csv` will be generated.
 
-## 📊  輸出檔案說明
+## 📊 Output File Description
 
-生成的 `Amazon_Reviews_with_Sentiment.csv` 將包含原始數據及以下新增欄位：
+The generated `Amazon_Reviews_with_Sentiment.csv` will contain the original data plus the following new columns:
 
-| 欄位名稱 | 說明 |
+| Column Name | Description |
 | :--- | :--- |
-| `sentiment_score` | 情感極性分數，範圍從 -1 (極負面) 到 1 (極正面)。 |
-| `sentiment_label` | 情感標籤分類：**Positive** (> 0.1), **Negative** (< -0.1), **Neutral** (其他)。 |
+| `sentiment_score` | Sentiment polarity score, ranging from -1 (Extremely Negative) to 1 (Extremely Positive). |
+| `sentiment_label` | Sentiment label classification: **Positive** (> 0.1), **Negative** (< -0.1), **Neutral** (Others). |
 
-## ⚠️ 注意事項
+## ⚠️ Notes
 
-- 本程式碼源自 Google Colab 環境，若在本地執行，請留意 `google.colab` 相關的導入語句可能需要移除或註解。
-- 原始資料讀取時使用了 `on_bad_lines='warn'` 參數以跳過格式錯誤的行。
+- This code originated from a Google Colab environment. If running locally, please note that `google.colab` related import statements may need to be removed or commented out.
+- The `on_bad_lines='warn'` parameter is used during raw data reading to skip malformed lines.
 
 ---
-*Created by [Your Name/GitHub Username]*
+*Created by Tzu Heng Su*
