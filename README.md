@@ -63,5 +63,9 @@ The generated `Amazon_Reviews_with_Sentiment.csv` will contain the original data
 - This code originated from a Google Colab environment. If running locally, please note that `google.colab` related import statements may need to be removed or commented out.
 - The `on_bad_lines='warn'` parameter is used during raw data reading to skip malformed lines.
 
----
+---<img width="1298" height="725" alt="amazon dashboard" src="https://github.com/user-attachments/assets/7bb74ffd-c101-44a5-a281-0d39a0581af7" />
+
 *Created by Tzu Heng Su*
+
+
+
